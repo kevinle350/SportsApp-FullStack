@@ -1,0 +1,5 @@
+SELECT PlaysMade.PlayerId, Rosters.TeamName, PlaysMade.PlayerName, (SUM(ydsnet) / COUNT(PlayMadeId)) AS YardsPerPlay
+FROM Rosters JOIN PlaysMade USING (PlayerId) JOIN PlayByPlay ON PlaysMade.PlayId = PlayByPlay.play_id
+WHERE PlayType = 'pass'
+GROUP BY PlaysMade.PlayerName, Rosters.TeamName, PlaysMade.PlayerId
+ORDER BY YardsPerPlay DESC

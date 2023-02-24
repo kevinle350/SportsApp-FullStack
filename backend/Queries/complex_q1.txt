@@ -1,0 +1,12 @@
+select t1.TeamName, sum(t1.ydsnet), count(t1.qtr) from 
+        (select distinct r.TeamName, pbp.play_id, pbp.ydsnet, pm.PlayerName, pbp.desc, pbp.qtr
+                from PlayByPlay pbp 
+                inner join PlaysMade pm
+                    on pm.PlayId = pbp.play_id and INSTR(pbp.desc, pm.PlayerName) > 0
+                inner join Rosters r
+                    on r.PlayerId = pm.PlayerId and r.Position = 'QB'
+                where pbp.play_type = 'pass' and (r.TeamName = pbp.home_team or r.TeamName = pbp.away_team) 
+                and pm.PlayerType = 'passer' and INSTR(pbp.desc, 'incomplete') = 0
+                and INSTR(pbp.desc, 'sacked') = 0) t1
+                group by t1.TeamName
+                order by sum(t1.ydsnet)

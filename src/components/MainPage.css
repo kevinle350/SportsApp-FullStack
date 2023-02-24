@@ -1,0 +1,85 @@
+.page-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+}
+
+.block-wrap {
+    display: block;
+}
+
+.header-section {
+    display: block;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.header-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: beige;
+}
+
+.about-us {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: pink;
+}
+
+.about-us-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-title {
+    
+}
+
+.play-types {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.inputs {
+    display: flex;
+    align-items: flex-end;
+}
+
+.under {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aqua;
+}
